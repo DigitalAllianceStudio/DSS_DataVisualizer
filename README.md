@@ -32,8 +32,8 @@
 
 ## :package: DSS 脚本文件参考示例
 
-[TMS320F2802x/DssScript.java](DssScriptFiles/TMS320F2802x/DssScript.java)
-[TMS320F280013x/DssScript.java](DssScriptFiles/TMS320F280013x/DssScript.java)
+- [TMS320F2802x/DssScript.java](DssScriptFiles/TMS320F2802x/DssScript.java)
+- [TMS320F280013x/DssScript.java](DssScriptFiles/TMS320F280013x/DssScript.java)
 
 </td>
 <td style>
