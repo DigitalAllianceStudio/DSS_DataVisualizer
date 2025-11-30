@@ -2,10 +2,15 @@
 <tr>
 <td colspan="2">
 
+:beers: DSS_DataVisualizer - 适用于 Texas Instruments 德州仪器芯片的非侵入式数据可视化实时示波工具 <a title="Hits" target="_blank" href="https://github.com/DigitalAllianceStudio/DSS_DataVisualizer"><img src="https://hits.b3log.org/DigitalAllianceStudio/DSS_DataVisualizer.svg"></a>
+
 > [!NOTE]
 > 本仓库用于 DSS_DataVisualizer 的发布，下载请跳转 [发布页面 (当前版本: v0.0.3.3)](https://github.com/DigitalAllianceStudio/DSS_DataVisualizer/releases/latest)
 
-:beers: DSS_DataVisualizer - 适用于 Texas Instruments 德州仪器芯片的非侵入式数据可视化实时示波工具 <a title="Hits" target="_blank" href="https://github.com/DigitalAllianceStudio/DSS_DataVisualizer"><img src="https://hits.b3log.org/DigitalAllianceStudio/DSS_DataVisualizer.svg"></a>
+> [!IMPORTANT]
+> 1. 理论上 CCS 支持的芯片（例如 `TMS320F28035` 以及国产1:1替代芯片例如湖南进芯的DSP，例如 `ADP32F035`，以及 `MSP430` 等...）和调试器（例如 `XDS100v3`、`XDS110`、`XDS560v2 Plus`），本软件也都能支持（请自行尝试）
+> 2. :warning: 首次使用需要配置系统环境变量，否则运行会提示“*由于找不到 jvm.dll，无法继续执行代码。重新安装程序可能会解决此问题。*”，请查看发布包中的 `README.md` 说明文档进行配置。
+> 3. :warning: 若运行报错（如`缺少动态链接库`），请安装 :package: `vcredist_x64.exe` 和 :package: `vc_redist.x64.exe` 运行库。
 
 ![GIF1](doc/GIF1.gif)
 
@@ -35,9 +40,6 @@
 
 ## :receipt: 其它说明
 
-> [!IMPORTANT]
-> 理论上 CCS 支持的芯片和调试器，本软件也都能支持（请自行尝试）
-
 > [!TIP]
 > 功能介绍：
 
@@ -51,16 +53,6 @@
 7. 支持`采样数据导出 CSV`
 8. 支持烧录程序
 9. 支持 `运行`、`挂起`、`复位` 操作
-
-</td>
-</tr>
-<tr>
-<td colspan="2">
-
-> [!IMPORTANT]
-> **注意事项：**
-
-- :warning: 若运行报错（如`缺少动态链接库`），请安装 :package: `vcredist_x64.exe` 和 :package: `vc_redist.x64.exe` 运行库。
 
 </td>
 </tr>
