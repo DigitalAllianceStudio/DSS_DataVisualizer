@@ -5,7 +5,7 @@
 :beers: DSS_DataVisualizer - 适用于 Texas Instruments 德州仪器芯片的非侵入式数据可视化实时示波工具 <a title="Hits" target="_blank" href="https://github.com/DigitalAllianceStudio/DSS_DataVisualizer"><img src="https://hits.b3log.org/DigitalAllianceStudio/DSS_DataVisualizer.svg"></a>
 
 > [!NOTE]
-> 本仓库用于 DSS_DataVisualizer 的发布，下载请跳转 [发布页面 (当前版本: v0.0.3.4)](https://github.com/DigitalAllianceStudio/DSS_DataVisualizer/releases/latest)
+> 本仓库用于 DSS_DataVisualizer 的发布，下载请跳转 [发布页面 (当前版本: v0.0.3.5)](https://github.com/DigitalAllianceStudio/DSS_DataVisualizer/releases/latest)
 
 > [!IMPORTANT]
 > 1. 理论上 CCS 支持的芯片（例如 `TMS320F28035` 以及国产1:1替代芯片例如湖南进芯的DSP，例如 `ADP32F035`，以及 `MSP430` 等...）和调试器（例如 `XDS100v3`、`XDS110`、`XDS560v2 Plus`），本软件也都能支持（请自行尝试）
@@ -48,11 +48,13 @@
 3. 支持 GEL 表达式读值，例如 `gVdcbus*gIdcbus`、`-gVar*8.123f+50` 等...
 4. 支持 GEL 表达式写值，例如 `gEnable=1`、`gWriteVar=-5.678f` 等...
     ![表达式](doc/表达式.png)
-5. 变量增删改查、采样使能、波形使能
-6. 高清示波图（模式有`扫描模式`、`滚动模式`：支持滚动、缩放、平移、游标测量等操作）
-7. 支持`采样数据导出 CSV`
-8. 支持烧录程序
-9. 支持 `运行`、`挂起`、`复位` 操作
+5. 支持读写核心寄存器、外设寄存器，例如 `PC`、`AdcaRegs.ADCCOUNTER.FREECOUNT`、`GpioDataRegs.GPADAT`、`GpioDataRegs.GPADAT.GPIO5` 等...
+    ![表达式2](doc/表达式2.png)
+6. 变量增删改查、采样使能、波形使能
+7. 高清示波图（模式有`扫描模式`、`滚动模式`：支持滚动、缩放、平移、游标测量等操作）
+8. 支持`采样数据导出 CSV`
+9. 支持烧录程序
+10. 支持 `运行`、`挂起`、`复位` 操作
 
 </td>
 </tr>
@@ -62,6 +64,8 @@
 
 ### 软件截图
 
+![表达式说明](doc/表达式说明.png)
+![表达式说明_读取寄存器](doc/表达式说明_读取寄存器.png)
 ![ProgramScreenshot8](doc/ProgramScreenshot8.png)
 ![ProgramScreenshot0](doc/ProgramScreenshot0.png)
 ![ProgramScreenshot1](doc/ProgramScreenshot1.png)
