@@ -5,7 +5,7 @@
 :beers: DSS_DataVisualizer - 适用于 Texas Instruments 德州仪器芯片的非侵入式数据可视化实时示波工具 <a title="Hits" target="_blank" href="https://github.com/DigitalAllianceStudio/DSS_DataVisualizer"><img src="https://hits.b3log.org/DigitalAllianceStudio/DSS_DataVisualizer.svg"></a>
 
 > [!NOTE]
-> 本仓库用于 DSS_DataVisualizer 的发布，下载请跳转 [发布页面 (当前版本: v0.0.3.6)](https://github.com/DigitalAllianceStudio/DSS_DataVisualizer/releases/latest)
+> 本仓库用于 DSS_DataVisualizer 的发布，当前版本: **v0.0.3.7**，下载请跳转程序发布页面 [github](https://github.com/DigitalAllianceStudio/DSS_DataVisualizer/releases/latest) 或 [gitee](https://gitee.com/tomystark/DSS_DataVisualizer-Release/releases/latest)
 
 > [!IMPORTANT]
 > 1. 理论上 CCS 支持的芯片（例如 `TMS320F28035` 以及国产1:1替代芯片例如湖南进芯的DSP，例如 `ADP32F035`，以及 `MSP430` 等...）和调试器（例如 `XDS100v3`、`XDS110`、`XDS560v2 Plus`），本软件也都能支持（请自行尝试）
