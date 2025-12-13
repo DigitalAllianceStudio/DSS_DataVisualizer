@@ -60,7 +60,10 @@ public class DssScript {
 
         server = (DebugServer) env.getServer("DebugServer.1");
         server.setConfig(sConfigurationFile);
+        // 打开会话（3种方式，根据情况选择其中一种即可）
         session = server.openSession("*", "*");
+        // session = server.openSession("*", "C28xx_CPU1");
+        // session = server.openSession("Texas Instruments XDS100v3 USB Debug Probe_0", "C28xx_CPU1");
 
         // session.options.printOptions(".*"); // 打印可设置的仿真器选项，不同仿真器选项可能有所不同，需要根据实际情况调整
         session.options.setBoolean("AutoRunToLabelOnRestart", true);
