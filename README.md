@@ -9,8 +9,8 @@
 
 > [!IMPORTANT]
 > 1. 理论上 CCS 支持的芯片（例如 `TMS320F28035` 以及国产1:1替代芯片例如湖南进芯的DSP，例如 `ADP32F035`，以及 `MSP430` 等...）和调试器（例如 `XDS100v3`、`XDS110`、`XDS560v2 Plus`），本软件也都能支持（请自行尝试）
->    :warning: 当前对多核芯片支持有限（同一时间仅可针对单个核进行表达式执行以及采样变量、寄存器等……），具体请参考 [TMS320F28379D/DssScript.java](DssScriptFiles/TMS320F28379D/DssScript.java)
-> 2. :warning: 若运行报错（如`缺少动态链接库`），请安装 :package: `vcredist_x64.exe` 和 :package: `vc_redist.x64.exe` 运行库。
+> 2. :warning: 当前对多核芯片支持有限（同一时间仅可针对单个核进行表达式执行以及采样变量、寄存器等……），具体请参考 [TMS320F28379D/DssScript.java](DssScriptFiles/TMS320F28379D/DssScript.java)
+> 3. :warning: 若运行报错（如`缺少动态链接库`），请安装 :package: `vcredist_x64.exe` 和 :package: `vc_redist.x64.exe` 运行库。
 
 ![GIF1](doc/GIF1.gif)
 
