@@ -8,13 +8,6 @@ import com.ti.debug.engine.scripting.*;
 // 注意：请勿修改函数的返回值类型、函数名、参数列表，否则上位机无法正常调用被修改的函数，
 // 仅根据需要修改函数体中的代码即可，大部分情况下只需要根据需求改动 execFlashProgram, execDssInit 这两个函数。
 
-// @formatter:off
-// 编译
-// javac -encoding UTF-8 -classpath ".;C:/ti/ccs1281/ccs/ccs_base/DebugServer/packages/ti/dss/java/dss.jar" ./DssScriptFiles/TMS320F28379D/DssScript.java
-// 运行
-// java -classpath ".;C:/ti/ccs1281/ccs/ccs_base/DebugServer/packages/ti/dss/java/dss.jar;./DssScriptFiles" TMS320F28379D/DssScript
-// @formatter:on
-
 public class DssScript {
     // 获取类文件所处路径
     private static String sClassFilePath = DssScript.class.getProtectionDomain().getCodeSource().getLocation().getPath()
@@ -79,12 +72,12 @@ public class DssScript {
         session2 = server.openSession("*", "C28xx_CPU2");
 
         // session1.options.printOptions(".*"); // 打印可设置的仿真器选项，不同仿真器选项可能有所不同，需要根据实际情况调整
-        session1.options.setBoolean("AutoRunToLabelOnRestart", true);
+        session1.options.setBoolean("AutoRunToLabelOnRestart", false);
         session1.options.setBoolean("AutoRunToLabelOnReset", false);
-        session1.options.setBoolean("AutoResetOnConnect", true);
-        session2.options.setBoolean("AutoRunToLabelOnRestart", true);
+        session1.options.setBoolean("AutoResetOnConnect", false);
+        session2.options.setBoolean("AutoRunToLabelOnRestart", false);
         session2.options.setBoolean("AutoRunToLabelOnReset", false);
-        session2.options.setBoolean("AutoResetOnConnect", true);
+        session2.options.setBoolean("AutoResetOnConnect", false);
 
         env.traceWrite("信息: 当前工作目录: " + env.getCurrentDirectory());
         env.traceWrite("信息: 开始连接到目标...");
@@ -195,8 +188,14 @@ public class DssScript {
         session2.target.restart(); // 需要先 session.symbol.load() 加载 .out 符号文件，或者 session.memory.loadProgram() 时使用 .out 符号文件
     }
 
+    // @formatter:off
+    // 编译
+    // javac -encoding UTF-8 -classpath ".;C:/ti/ccs1281/ccs/ccs_base/DebugServer/packages/ti/dss/java/dss.jar" ./DssScriptFiles/TMS320F28379D/DssScript.java
+    // 运行
+    // java -classpath ".;C:/ti/ccs1281/ccs/ccs_base/DebugServer/packages/ti/dss/java/dss.jar;./DssScriptFiles" TMS320F28379D/DssScript
+    // @formatter:on
     /**
-     * main 函数可用于独立测试，不依赖 Qt C++ 上位机，直接在终端中执行该 .class 即可测试
+     * main 函数仅用于独立测试，不依赖 Qt C++ 上位机，也不会被上位机调用，直接在终端中执行该 .class 即可测试
      */
     public static void main(String[] args) {
         DssScript dss = new DssScript();

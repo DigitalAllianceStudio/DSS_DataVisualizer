@@ -8,13 +8,6 @@ import com.ti.debug.engine.scripting.*;
 // 注意：请勿修改函数的返回值类型、函数名、参数列表，否则上位机无法正常调用被修改的函数，
 // 仅根据需要修改函数体中的代码即可，大部分情况下只需要根据需求改动 execFlashProgram, execDssInit 这两个函数。
 
-// @formatter:off
-// 编译
-// javac -encoding UTF-8 -classpath ".;C:/ti/ccs1281/ccs/ccs_base/DebugServer/packages/ti/dss/java/dss.jar" ./DssScriptFiles/TMS320F2803x/DssScript.java
-// 运行
-// java -classpath ".;C:/ti/ccs1281/ccs/ccs_base/DebugServer/packages/ti/dss/java/dss.jar;./DssScriptFiles" TMS320F2803x/DssScript
-// @formatter:on
-
 public class DssScript {
     // 获取类文件所处路径
     private static String sClassFilePath = DssScript.class.getProtectionDomain().getCodeSource().getLocation().getPath()
@@ -174,15 +167,21 @@ public class DssScript {
         session.target.restart(); // 需要先 session.symbol.load() 加载 .out 符号文件，或者 session.memory.loadProgram() 时使用 .out 符号文件
     }
 
+    // @formatter:off
+    // 编译
+    // javac -encoding UTF-8 -classpath ".;C:/ti/ccs1281/ccs/ccs_base/DebugServer/packages/ti/dss/java/dss.jar" ./DssScriptFiles/TMS320F2803x/DssScript.java
+    // 运行
+    // java -classpath ".;C:/ti/ccs1281/ccs/ccs_base/DebugServer/packages/ti/dss/java/dss.jar;./DssScriptFiles" TMS320F2803x/DssScript
+    // @formatter:on
     /**
-     * main 函数可用于独立测试，不依赖 Qt C++ 上位机，直接在终端中执行该 .class 即可测试
+     * main 函数仅用于独立测试，不依赖 Qt C++ 上位机，也不会被上位机调用，直接在终端中执行该 .class 即可测试
      */
     public static void main(String[] args) {
         DssScript dss = new DssScript();
 
         try {
-            dss.execDssInit("D:/SrcCode/Qt/DSS_DataVisualizer/DssProjConfigFiles/FL_GPL600_48V/ADP32F035.ccxml", "D:/SrcCode/Qt/DSS_DataVisualizer/DssProjConfigFiles/FL_GPL600_48V/f28035_sensorless_foc_gpl600_p48_20250825.out", "D:/SrcCode/Qt/DSS_DataVisualizer/LogFileStylesheet.xsl");
-            dss.execFlashProgram("D:/SrcCode/Qt/DSS_DataVisualizer/DssProjConfigFiles/FL_GPL600_48V/f28035_sensorless_foc_gpl600_p48_20250825.out");
+            dss.execDssInit("D:/CCS12/TestProjF28035/ADP32F035.ccxml", "D:/CCS12/TestProjF28035/APP.out", "D:/CCS12/TestProjF28035/LogFileStylesheet.xsl");
+            dss.execFlashProgram("D:/CCS12/TestProjF28035/APP.out");
             dss.execDssReset();
             dss.execDssGo();
             dss.execDssDeinit();
